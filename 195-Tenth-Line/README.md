@@ -1,0 +1,1 @@
+Basic method of awk, sed, and cat, tail, head
