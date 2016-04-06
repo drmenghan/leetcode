@@ -4,14 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        stack = []
-        match = {')':'(',']':'[','}':'{'}
-        for c in s:
-            if c in match:
-                if not(stack and stack.pop()==match[c]):
-                    return False
-            else:
-                stack.append(c)
-        return not stack
-#learned from bbs
+        if len(s)==0:
+            return True
+        elif len(s)%2!=0:
+            return False
+        while '()' in s or '{}' in s or '[]' in s:
+            s = s.replace('{}','').replace('[]','').replace('()','')
+        if len(s)==0:
+            return True
+        else:
+            return False
+#learned from bbs tricky
             
